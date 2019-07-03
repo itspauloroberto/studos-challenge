@@ -1,0 +1,94 @@
+$primaryColor: #339CF7;
+$secondaryColor: #2572EF;
+
+$defaultBackgrondColor: #fff;
+$defaultBorderRadius: 6px;
+$defaultBorderColor: #ccc;
+$defaultPlaceholderColor: #aaa;
+
+//Cards
+$cardsPerLine: 4;
+$headingHeight: 50px;
+$cardMargin: 15px;
+$cardWidth: 300px;
+$cardHeight: 230px;
+$cardBorderRadius: 8px;
+$cardTextColor: #333;
+
+//List
+$listWidth: ($cardWidth + ($cardMargin * 2)) * $cardsPerLine;
+
+body {
+  font-family: 'Arial';
+  margin: 0;
+  background: $defaultBackgrondColor;
+}
+.header {
+  display: flex;
+  background: $primaryColor;
+  height: 90px;
+  align-items: center;
+  padding: 0 30px;
+}
+.header h1 {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  flex: 0;
+  position: absolute;
+  color: $defaultBackgrondColor;
+}
+.header > div {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+.header .search,
+.header .search input.react-search-field-input { border-radius: $defaultBorderRadius !important; }
+.header .search {
+  flex: 0.60;
+}
+.header .search input.react-search-field-input {
+  padding: 10px 20px !important;
+  height: 15px !important;
+  border: none !important;
+}
+.header .search input.react-search-field-input::placeholder { color: $defaultPlaceholderColor; }
+.header .search button { display: none; }
+.list-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  width: $listWidth;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.list .card .heading {
+  background: $primaryColor;
+  height: $headingHeight;
+  border-radius: $cardBorderRadius $cardBorderRadius 0 0;
+}
+.list .card h2 {
+  font-size: 20px;
+}
+.list .card:nth-child(8n+1) .heading,
+.list .card:nth-child(8n+2) .heading,
+.list .card:nth-child(8n+3) .heading,
+.list .card:nth-child(8n+4) .heading { background: $secondaryColor; }
+.list .card:nth-child(4n) { margin: $cardMargin 0; }
+.list .card {
+  color: $cardTextColor;
+  width: $cardWidth;
+  height: $cardHeight;
+  border-radius: $cardBorderRadius;
+  border: 1px solid $defaultBorderColor;
+  margin: $cardMargin;
+}
+.list .card > div:not(.heading) {
+  padding: 15px;
+}

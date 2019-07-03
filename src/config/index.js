@@ -1,0 +1,1 @@
+export const APIEndpointURL = 'https://s3.amazonaws.com/studos-plus/others/test.json';
